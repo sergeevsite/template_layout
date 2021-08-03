@@ -1,0 +1,23 @@
+// Themes Variables
+
+$black:                     #1F242D;
+$white:                     #FFFFFF;
+
+$themes: (
+    1: (
+        
+    )
+);
+
+
+@function color($key, $scheme: 1) {
+    @return map-get(map-get($themes, $scheme), '#{$key}');
+}
+
+.color-scheme {
+    @for $i from 1 through 1 {
+        &-#{$i} {
+
+        }
+    }
+}

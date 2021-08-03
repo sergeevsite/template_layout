@@ -1,0 +1,33 @@
+// Defaults
+
+$serif-font:                sans-serif;
+$default-font:              "Noto Sans", $serif-font;
+
+// Fonts
+
+$fonts-path:                    "../fonts";         
+
+$fonts: (
+    1: (
+        name: 'NotoSans', // Название CamelCase
+        font-weight: 600,
+        font-weight-text: 'Bold'
+    )
+);
+
+@function fonts($key, $scheme: 1) {
+    @return map-get(map-get($fonts, $scheme), '#{$key}');
+}
+
+@for $i from 1 through 1 {
+    @font-face {
+        font-family: fonts(name, $i);
+        src: url($fonts-path + '/' + fonts(name, $i) + '/' + fonts(name, $i) + '-' + fonts(font-weight-text, $i) + '.woff2') format('woff2'),
+                url($fonts-path + '/' + fonts(name, $i) + '/' + fonts(name, $i) + '-' + fonts(font-weight-text, $i) + '.woff') format('woff');
+        font-weight: fonts(font-weight, $i);
+        font-style: normal;
+        font-display: fallback;
+        text-rendering: optimizeLegibility;
+    }
+}
+

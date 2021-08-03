@@ -1,0 +1,9 @@
+// < 1280px
+@include screen(desktop, min) {
+
+}
+
+// 1279px - 1024px
+@include screen(laptop, max) {
+
+}

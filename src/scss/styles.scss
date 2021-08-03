@@ -1,0 +1,47 @@
+@import "core/_core";
+
+// Refactored styles place here
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+html, body {
+  position: relative;
+  width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #fff;
+  font-family: $default-font;
+  font-weight: normal;
+  font-size: 24px;
+	line-height: 33px;
+  text-rendering: optimizeLegibility;
+  color: #000;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@import "_desktop";
+@import "_tablet";
+@import "_mobile";
+@import "./core/theme";
