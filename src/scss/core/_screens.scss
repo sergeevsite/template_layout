@@ -1,45 +1,44 @@
 // Media sizes
-$default-font-size:         20;
-$default-line-height:       24;
+$default-pixel:         19;
 
-$pixel:                     1em / $default-font-size;
+$pixel:                     1em / $default-pixel;
 
 // >1600px
-$screen-xxl:                ( 1600 / $default-font-size ) * 1em;
+$screen-xxl:                ( 1600 / $default-pixel ) * 1em;
 $screen-xxl-min:            $screen-xxl;
 
 // 1440-1599px
-$screen-xl:                 ( 1440 / $default-font-size ) * 1em;
+$screen-xl:                 ( 1440 / $default-pixel ) * 1em;
 $screen-xl-min:             $screen-xl;
 $screen-xl-max:             $screen-xxl-min - $pixel;
 
 // 1280-1439px
-$screen-lg:                 ( 1280 / $default-font-size ) * 1em;
+$screen-lg:                 ( 1280 / $default-pixel ) * 1em;
 $screen-lg-min:             $screen-lg;
 $screen-lg-max:             $screen-xl-min - $pixel;
 
 // 1113-1279px
-$screen-md:                 ( 978 / $default-font-size ) * 1em;
+$screen-md:                 ( 978 / $default-pixel ) * 1em;
 $screen-md-min:             $screen-md;
 $screen-md-max:             $screen-lg-min - $pixel;
 
 // 768-1112px
-$screen-sm:                 ( 768 / $default-font-size ) * 1em;
+$screen-sm:                 ( 768 / $default-pixel ) * 1em;
 $screen-sm-min:             $screen-sm;
 $screen-sm-max:             $screen-md-min - $pixel;
 
 // 480-767px
-$screen-xs:                 ( 480 / $default-font-size ) * 1em;
+$screen-xs:                 ( 480 / $default-pixel ) * 1em;
 $screen-xs-min:             $screen-xs;
 $screen-xs-max:             $screen-sm-min - $pixel;
 
 // 320-479px
-$screen-xxs:                ( 420 / $default-font-size ) * 1em;
+$screen-xxs:                ( 420 / $default-pixel ) * 1em;
 $screen-xxs-min:            $screen-xxs;
 $screen-xxs-max:            $screen-xs-min - $pixel;
 
 // 320-479px
-$screen-xxxs:                ( 1 / $default-font-size ) * 1em;
+$screen-xxxs:                ( 1 / $default-pixel ) * 1em;
 $screen-xxxs-min:            $screen-xxs;
 $screen-xxxs-max:            $screen-xxs-min - $pixel;
 

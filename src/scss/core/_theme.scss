@@ -1,23 +1,158 @@
 // Themes Variables
 
-$black:                     #1F242D;
-$white:                     #FFFFFF;
+$black: #1F242D;
+$white: #FFFFFF;
 
 $themes: (
-    1: (
-        
-    )
+  1: (
+    light: #fff,
+    dark: #000,
+    main: #E83842,
+    second: #F7F7F7,
+    header: #fff,
+    footer: #fff,
+
+    button-primary-hover: linear-gradient(0deg, #B12830 0%, #DB0D18 100%),
+    button-primary-shadow: 0px 5px 10px rgba(211, 66, 74, 0.5),
+
+    button-second-border: #E83842,
+    button-second-hover: #E83842,
+    button-second-shadow: 0px 5px 10px rgba(211, 66, 74, 0.5),
+
+    title: #1B1B1B,
+    text: #383838,
+    tags: #8B8B8B,
+
+    field: #BDBDBD,
+    error: #FF0000,
+    focus: #E83842,
+    close: #424242,
+    current: #9a9a9a
+  )
 );
 
 
-@function color($key, $scheme: 1) {
-    @return map-get(map-get($themes, $scheme), '#{$key}');
+@function theme($key, $scheme: 1) {
+  @return map-get(map-get($themes, $scheme), '#{$key}');
 }
 
-.color-scheme {
-    @for $i from 1 through 1 {
-        &-#{$i} {
+.theme {
+  @for $i from 1 through 1 {
+    &-#{$i} {
 
+      body {
+        background-color: theme(light, $i);
+        color: theme(dark, $i);
+      }
+      a {
+        color: theme(text, $i);
+        &:hover {
+          color: theme(main, $i);
         }
+      }
+
+      .button {
+        color: theme(color, $i);
+        background: theme(light, $i);
+        &--primary {
+          color: theme(light, $i);
+          background: theme(gradient, $i);
+          &:hover {
+            color: theme(light, $i);
+            background: theme(button-primary-hover, $i);
+            box-shadow: theme(button-primary-shadow, $i)
+          }
+          &:disabled {
+            color: theme(light, $i);
+            background: theme(gradient, $i);
+            box-shadow: none;
+          }
+        }
+        &--action {
+          &:hover {
+            color: theme(light, $i);
+            background: theme(main, $i);
+          }
+        }
+        &--border {
+          border: 2px solid theme(button-second-border, $i);
+          color: theme(main, $i);
+          &:hover {
+            background: theme(button-second-hover, $i);
+            color: theme(light, $i);
+            box-shadow: theme(button-second-shadow, $i);
+          }
+        }
+      }
+
+      .header {
+        background: theme(header, $i);
+      }
+
+      .footer {
+        background: theme(footer, $i);
+      }
+
+      .subtitle {
+        color: theme(text, $i);
+      }
+
+      .tags {
+        color: theme(tags, $i)
+      }
+
+      .menu {
+        &__icon {
+          span, &:before, &:after {
+            background: theme(main, $i);
+          }
+        }
+        &__link {
+          color: theme(text, $i);
+          &.current {
+            a {
+              color: theme(current, $i);
+            }
+          }
+        }
+      }
+
+      .field {
+        label {
+          color: theme(text, $i)
+        }
+        input, textarea {
+          border: 2px solid theme(field, $i);
+          color: theme(text, $i);
+          &:focus {
+            border-color: theme(focus, $i);
+          }
+          &.invalid {
+            border-color: theme(error, $i);
+            & ~ span.invalid {
+              color: theme(error, $i);
+            }
+          }
+        }
+      }
+
+      .modal {
+        &__close {
+          &:after, &:before {
+            background: theme(close, $i);
+          }
+          &:hover {
+            opacity: 1;
+            &:after, &:before {
+              background: theme(main, $i);
+            }
+          }
+        }
+        &__title {
+          color: theme(title, $i);
+        }
+      }
+
     }
+  }
 }

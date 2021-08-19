@@ -1,9 +1,13 @@
 // < 1280px
 @include screen(desktop, min) {
-
+  .screener::before {
+    content: 'Desktop' !important;
+  }
 }
 
 // 1279px - 1024px
 @include screen(laptop, max) {
-
+  .screener::before {
+    content: 'Laptop' !important;
+  }
 }

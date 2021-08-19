@@ -1,17 +1,19 @@
-// Defaults
+// Defaults options
 
+$fonts-path:                "../fonts";
 $serif-font:                sans-serif;
-$default-font:              "Noto Sans", $serif-font;
-
-// Fonts
-
-$fonts-path:                    "../fonts";         
+$default-font:              "Montserrat", $serif-font;
 
 $fonts: (
     1: (
-        name: 'NotoSans', // Название CamelCase
-        font-weight: 600,
+        name: 'Montserrat', // Название CamelCase
+        font-weight: bold,
         font-weight-text: 'Bold'
+    ),
+    2: (
+        name: 'Montserrat', // Название CamelCase
+        font-weight: 600,
+        font-weight-text: 'SemiBold'
     )
 );
 
@@ -19,7 +21,7 @@ $fonts: (
     @return map-get(map-get($fonts, $scheme), '#{$key}');
 }
 
-@for $i from 1 through 1 {
+@for $i from 2 through 1 {
     @font-face {
         font-family: fonts(name, $i);
         src: url($fonts-path + '/' + fonts(name, $i) + '/' + fonts(name, $i) + '-' + fonts(font-weight-text, $i) + '.woff2') format('woff2'),

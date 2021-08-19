@@ -1,9 +1,24 @@
 // 383px - 334px
 @include screen(mobile, max) {
+  .screener::before {
+    content: 'Mobile' !important;
+  }
 
+  .modal {
+    &-wrapper {
+      padding: 30px 12px;
+      max-height: 100vh;
+    }
+    &__title {
+      font-size: 26px;
+      line-height: 34px;
+    }
+  }
 }
 
 // > 335px
 @include screen(mini, max) {
-
+  .screener::before {
+    content: 'Mini' !important;
+  }
 }
